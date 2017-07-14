@@ -1,2 +1,2 @@
-# geeksclub
-GeeksClub - A social platform for geeks
+# GeeksClub - A social platform for geeks
+
