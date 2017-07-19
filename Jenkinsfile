@@ -1,15 +1,10 @@
 pipeline {
-    agent any
-    tools {
-        maven 'apache-maven-3.3.9'
-    }
+    agent { docker 'maven:3.3.3' }
     stages {
-        stage('Checkout') {
-                git 'https://github.com/sivaprasadreddy/geeksclub.git'
-        }
-
         stage('Build') {
-            sh 'mvn -B -V -U -e clean package'
+            steps {
+                sh 'mvn -B -V -U -e clean package'
+            }
         }
 
         stage('Archive') {
