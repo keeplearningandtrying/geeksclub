@@ -6,7 +6,7 @@ declare docker_compose_file=${project_dir}/docker-compose-platform.yml
 
 function start() {
     echo 'Starting GeeksClub Platform....'
-    docker-compose -f ${docker_compose_file} up
+    docker-compose -f ${docker_compose_file} up -d
     docker-compose -f ${docker_compose_file} logs -f
 }
 

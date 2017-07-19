@@ -6,6 +6,7 @@ declare geeksclub="geeksclub"
 
 function start() {
     echo 'Starting GeeksClub....'
+    build_api
     docker-compose -f ${docker_compose_file} up --build --force-recreate -d ${geeksclub}
     docker-compose -f ${docker_compose_file} logs -f
 }
@@ -14,6 +15,10 @@ function stop() {
     echo 'Stopping GeeksClub....'
     docker-compose -f ${docker_compose_file} stop
     docker-compose -f ${docker_compose_file} rm -f
+}
+
+function build_api() {
+    ./mvnw clean package -DskipTests
 }
 
 action="start"

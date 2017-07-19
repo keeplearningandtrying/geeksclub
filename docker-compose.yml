@@ -1,7 +1,18 @@
 version: '2'
 
 services:
+  mysql:
+    image: mysql:5.6.26
+    container_name: gcmysql
+    environment:
+     - MYSQL_ROOT_PASSWORD=gcadmin
+     - MYSQL_DATABASE=gcdb
+    ports:
+      - "3316:3306"
+
   geeksclub:
     build: .
     ports:
      - "8090:8080"
+    depends_on:
+      - mysql
