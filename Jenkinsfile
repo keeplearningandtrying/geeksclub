@@ -8,7 +8,9 @@ pipeline {
         }
 
         stage('Archive') {
-            junit allowEmptyResults: true, testResults: '**/target/**/TEST*.xml'
+            steps {
+                junit allowEmptyResults: true, testResults: '**/target/**/TEST*.xml'
+            }
         }
     }
 }
