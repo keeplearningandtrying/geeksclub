@@ -4,10 +4,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class SampleIT
+public class SampleTest
 {
     @Test
-    public void dummyIntegrationTest()
+    public void dummyTest()
     {
         assertTrue(true);
     }
